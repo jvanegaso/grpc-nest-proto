@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package novedad;
+
+service NovedadService {
+  rpc CreateNovedad (CreateNovedadRequest) returns (CreateNovedadResponse) {}
+}
+
+message CreateNovedadRequest {
+  double lat = 1;
+  double lon = 2;
+  string userId = 3;
+}
+
+message CreateNovedadResponse {
+  int32 status = 1;
+  repeated string error = 2;
+  int32 id = 3;
+}
